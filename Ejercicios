@@ -1,0 +1,17 @@
+/*
+ Realizar un programa que permita mostrar en pantalla el mensaje “UNIVERSIDAD
+PERUANA LOS ANDES”
+ */
+
+package com.mycompany.aet2;
+
+/**
+ *
+ * @author lucas
+ */
+public class AET2 {
+
+    public static void main(String[] args) {
+        System.out.println("UNIVERSIDAD PERUANA LOS ANDES");
+    }
+}
