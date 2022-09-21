@@ -5,10 +5,6 @@ PERUANA LOS ANDES”
 
 package com.mycompany.aet2;
 
-/**
- *
- * @author lucas
- */
 public class AET2 {
 
     public static void main(String[] args) {
@@ -22,10 +18,7 @@ public class AET2 {
 
 package com.mycompany.aet2;
 
-/**
- *
- * @author lucas
- */
+
 public class Ejercicio2 {
 
     public static void main(String[] args) {
@@ -41,10 +34,7 @@ public class Ejercicio2 {
 
 package com.mycompany.aet2;
 import java.util.Scanner;
-/**
- *
- * @author lucas
- */
+
 public class Ejercicio2 {
 
     public static void main(String[] args) {
@@ -62,3 +52,230 @@ public class Ejercicio2 {
     }
 }
 ------------------------------------------------------------------------------------------------
+/*
+ 4. Realizar un programa que calcule el perímetro y area de las siguientes figuras geométricas:
+-Triangulo
+-Cuadrado
+-Rectangulo
+-Rombo
+-Romboide
+-Trapecio
+ */
+
+package com.mycompany.aet2;
+import static java.lang.Math.sqrt;
+import java.util.Scanner;
+public class Ejercicio4 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String selec;
+        float area=0,perimetro=0;
+        System.out.println("Selecione la figura geometrica a operar : \nTr => Triangulo \nCu => Cuadrado \nRe => Rectangulo \nRo => Rombo \nRoe => Romboide \nTro => Trapecio");
+        selec=sc.nextLine();
+        switch (selec){
+            case "Tr"-> {
+                float num1,num2,num3,s;
+                System.out.println("Ingrese el lado 1");
+                num1=sc.nextFloat();
+                System.out.println("Ingrese el lado 2");
+                num2=sc.nextFloat();
+                System.out.println("Ingrese el lado 3");
+                num3=sc.nextFloat();
+                perimetro=num1+num2+num3;
+                s=perimetro/2;
+                area=(float) sqrt(s*(s-num1)*(s-num2)*(s-num3));
+            }
+            case "Cu"->{
+                float num1;
+                System.out.println("Ingrese el valor del lado");
+                num1=sc.nextFloat();
+                area=num1*num1;
+                perimetro=num1*4;
+            }
+            case "Re"->{
+                float num1,num2;
+                System.out.println("Ingrese el valor de la base :");
+                num1=sc.nextFloat();
+                System.out.println("Ingrese el valor de la altura :");
+                num2=sc.nextFloat();
+                perimetro=2*num1+2*num2;
+                area=num1*num2;
+            }
+            case "Ro"->{
+                float num1,num2,num3;
+                System.out.println("Ingrese el valor del lado :");
+                num1=sc.nextFloat();
+                System.out.println("Ingrese la diagonal mayor :");
+                num2=sc.nextFloat();
+                System.out.println("Ingrese la diagonal menor :");
+                num3=sc.nextFloat();
+                perimetro=4*num1;
+                area=(num2*num3)/2;
+            }
+            case "Roe"->{
+                float num1,num2;
+                System.out.println("Ingrese el valor de la base :");
+                num1=sc.nextFloat();
+                System.out.println("Ingrese el valor de la altura :");
+                num2=sc.nextFloat();
+                perimetro=2*num1+2*num2;
+                area=num1*num2;
+            }
+            case "Tro"->{
+                float num1,num2,num3,num4,num5;
+                System.out.println("Ingrese la base mayor :");
+                num1=sc.nextFloat();
+                System.out.println("Ingrese la base menor :");
+                num2=sc.nextFloat();
+                System.out.println("Ingrese el lado izquierdo :");
+                num3=sc.nextFloat();
+                System.out.println("Ingrese el lado derecho :");
+                num4=sc.nextFloat();
+                System.out.println("Ingrese la altura :");
+                num5=sc.nextFloat();
+                perimetro=num1+num2+num3+num4;
+                area=(num5*(num1+num2))/2;
+            }
+        }
+        System.out.println("Perimetro : "+perimetro);
+        System.out.println("Area : "+area);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+5. Realizar un programa que calcule el promedio de 5 notas ingresadas por teclado.
+ */
+
+package com.mycompany.aet2;
+import java.util.Scanner;
+public class Ejercicio5 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float promedio=0;
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Ingrese la nota "+i+" :");
+            promedio=promedio + sc.nextFloat();
+        }
+        promedio=promedio/5;
+        System.out.println("El promedio de las notas ingresadas es : "+promedio);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+6. Realizar un programa que calcule la multiplicación de 5 números ingresados por teclado.
+ */
+
+package com.mycompany.aet2;
+import java.util.Scanner;
+public class Ejercicio6 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float producto =1;
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Ingrese el numero "+i+" :");
+            producto=producto*sc.nextFloat();
+        }
+        System.out.println("La multiplicacion de los numeros es : "+producto);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+7.Realizar un programa que permita ingresar 10 números por teclado, el programa debe
+calcular la multiplicación entre la suma de los primeros 5 números y la suma de los 5 últimos
+números. 
+ */
+
+package com.mycompany.aet2;
+import java.util.Scanner;
+public class Ejercicio7 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float producto =1,sum1=0,sum2=0;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Ingrese el numero "+i+" :");
+            if(i<=5)
+                sum1=sum1+sc.nextFloat();
+            else
+                sum2=sum2+sc.nextFloat();
+        }
+        producto=sum1*sum2;
+        System.out.println("Suma de los 5 primeros numeros : "+sum1);
+        System.out.println("Suma de los 5 ultimos numeros  : "+sum2);
+        System.out.println("Producto de las sumas : "+producto);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+8. Calcular el área de un circulo sabiendo que pi = 3,14159265 A= pi x r2, sabiendo que r=5.
+ */
+
+package com.mycompany.aet2;
+public class Ejercicio8 {
+
+    public static void main(String[] args) {
+        float  Pi=3.14159265f,radio=5,area;
+        area=Pi*radio*radio;
+        System.out.println("El area del circulo de radio 5 es : "+area);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+9. Calcular la suma de las áreas de 3 círculos cuyos radios son 8.9, 6.7 y 7.9
+ */
+
+package com.mycompany.aet2;
+public class Ejercicio9 {
+
+    public static void main(String[] args) {
+        float  Pi=3.14159265f,radio1=8.9f,radio2=6.7f,radio3=7.9f,area,suma;
+            area=Pi*radio1*radio1;
+            suma=area;
+            area=Pi*radio2*radio2;
+            suma=suma+area;
+            area=Pi*radio3*radio3;
+            suma=suma+area;
+        System.out.println("La suma de las areas de los 3 circulos es : "+suma);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+10. Calcular la suma de las áreas de 8 círculos cuyos radios son 18.9, 16.7, 71.9, 4.6, 6.7, 5.6.
+4.7y 10.
+ */
+
+package com.mycompany.aet2;
+public class Ejercicio10 {
+
+    public static void main(String[] args) {
+        float  Pi=3.14159265f,area,suma=0;
+        float [] radios={18.9f,16.7f,71.9f,4.6f,6.7f,5.6f,4.7f,10};
+        for(int i=0;i<8;i++){
+            area=Pi*radios[i]*radios[i];
+            suma=suma+area;
+        }
+        System.out.println("La suma de las areas de los 8 circulos es : "+suma);
+    }
+}
+------------------------------------------------------------------------------------------------
+/*
+11. Programa que solicita ingresar un número favorito por teclado y luego el computador debe
+mostrar el mensaje “Tu numero favorito es <numero ingresado>”. 
+ */
+
+package com.mycompany.aet2;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+public class Ejercicio11 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float num;
+        System.out.print("Ingresa tu numero favorito : ");
+        num=sc.nextFloat();
+        JOptionPane.showMessageDialog(null, "Tu numero favorito es "+num);
+    }
+}
